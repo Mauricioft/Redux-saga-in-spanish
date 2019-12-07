@@ -6,3 +6,29 @@ El modelo mental es que una saga es como un hilo separado en su aplicación que 
 
 Es posible que haya usado redux-thunk antes para manejar su recuperación de datos. Contrariamente al redux thunk, no terminas en el infierno de devolución de llamada, puedes probar tus flujos asincrónicos fácilmente y tus acciones se mantienen puras.
 
+### Instalación <a id="instalaci&#xF3;n"></a>
+
+Para instalar la versión estable:
+
+`$ npm i -S redux-saga` o `$ yarn add redux-saga`
+
+Alternativamente, puede usar las compilaciones UMD proporcionadas directamente en la etiqueta  de una página HTML. Ver [esta sección](https://redux-saga.js.org/#using-umd-build-in-the-browser).
+
+**Ejemplo de uso**
+
+Supongamos que tenemos una interfaz de usuario para obtener algunos datos de usuario de un servidor remoto cuando se hace clic en un botón. \(Por brevedad, solo mostraremos el código de activación de la acción\).
+
+`class UserComponent extends React.component{` 
+
+`...`
+
+onSomeButtonClicked `= () =>` 
+
+`}`
+
+
+
+
+
+
+
