@@ -72,3 +72,8 @@ function* mySaga() {
 
 export default mySaga;
 ```
+
+Para ejecutar nuestra Saga, tendremos que conectarla a la Tienda Redux usando el middleware redux-saga.
+
+**\`\`**[**`main.js`**](https://mauricioft93.gitbook.io/redux-saga-en-espanol/#main)**\`\`**
+
