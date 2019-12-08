@@ -1,6 +1,8 @@
-<img src='https://redux-saga.js.org/logo/0800/Redux-Saga-Logo-Landscape.png' alt='Redux-saga' width='800px'>
-
 # Read Me
+
+![Redux-saga](https://redux-saga.js.org/logo/0800/Redux-Saga-Logo-Landscape.png)
+
+## Read Me
 
 redux-saga es una biblioteca que tiene como objetivo hacer que los efectos secundarios de la aplicación \(es decir, cosas asincrónicas como la obtención de datos y cosas impuras como acceder al caché del navegador\) sean más fáciles de administrar, más eficientes de ejecutar, fáciles de probar y mejores para manejar fallas.
 
@@ -14,7 +16,7 @@ Para instalar la versión estable:
 
 `$ npm i -S redux-saga` o `$ yarn add redux-saga`
 
-Alternativamente, puede usar las compilaciones UMD proporcionadas directamente en la etiqueta  de una página HTML. Ver [esta sección](https://redux-saga.js.org/#using-umd-build-in-the-browser).
+Alternativamente, puede usar las compilaciones UMD proporcionadas directamente en la etiqueta de una página HTML. Ver [esta sección](https://redux-saga.js.org/#using-umd-build-in-the-browser).
 
 **Ejemplo de uso**
 
@@ -31,11 +33,9 @@ class UserComponent extends React.Component {
 }
 ```
 
+El componente envía una acción de objeto simple a la tienda. Crearemos una Saga que vigile todas las acciones de USER\_FETCH\_REQUESTED y active una llamada API para obtener los datos del usuario.
 
+`sagas.js`
 
-
-
-
-
-
+\`\`
 
