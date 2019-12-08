@@ -49,7 +49,7 @@ El componente envía una acción de objeto simple a la tienda. Crearemos una Sag
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import Api from '...'
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
+// Saga de trabajadores: se activará en acciones USER_FETCH_REQUESTED
 function* fetchUser(action) {
    try {
       const user = yield call(Api.fetchUser, action.payload.userId);
@@ -60,19 +60,19 @@ function* fetchUser(action) {
 }
 
 /*
-  Starts fetchUser on each dispatched `USER_FETCH_REQUESTED` action.
-  Allows concurrent fetches of user.
+  Inicia fetchUser en cada acción despachada `USER_FETCH_REQUESTED`.
+  Permite búsquedas simultáneas de usuario.
 */
 function* mySaga() {
   yield takeEvery("USER_FETCH_REQUESTED", fetchUser);
 }
 
 /*
-  Alternatively you may use takeLatest.
+  Alternativamente, puede usar takeLatest.
 
-  Does not allow concurrent fetches of user. If "USER_FETCH_REQUESTED" gets
-  dispatched while a fetch is already pending, that pending fetch is cancelled
-  and only the latest one will be run.
+  No permite búsquedas simultáneas de usuario. Si "USER_FETCH_REQUESTED" obtiene
+  enviado mientras una recuperación ya está pendiente, esa recuperación pendiente se cancela
+  y solo se ejecutará el último.
 */
 function* mySaga() {
   yield takeLatest("USER_FETCH_REQUESTED", fetchUser);
@@ -92,7 +92,7 @@ import createSagaMiddleware from 'redux-saga'
 import reducer from './reducers'
 import mySaga from './sagas'
 
-// create the saga middleware
+// crea el middleware saga
 const sagaMiddleware = createSagaMiddleware()
 // mount it on the Store
 const store = createStore(
@@ -100,7 +100,7 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 )
 
-// then run the saga
+// luego ejecuta la saga
 sagaMiddleware.run(mySaga)
 
 // render the application
@@ -179,7 +179,7 @@ Demostración con `webpack` y API de alto nivel`takeEvery`.
 ```bash
 $ npm run counter
 
-# test sample for the generator
+# muestra de prueba para el generador
 $ npm run test-counter
 ```
 
@@ -196,7 +196,7 @@ $ npm run cancellable-counter
 ```bash
 $ npm run shop
 
-# test sample for the generator
+# muestra de prueba para el generador
 $ npm run test-shop
 ```
 
@@ -205,7 +205,7 @@ $ npm run test-shop
 ```bash
 $ npm run async
 
-# test sample for the generators
+# muestra de prueba para el generador
 $ npm run test-async
 ```
 
@@ -214,7 +214,7 @@ $ npm run test-async
 ```bash
 $ npm run real-world
 
-# sorry, no tests yet
+# lo siento, todavía no hay pruebas
 ```
 
 #### TypeScript
