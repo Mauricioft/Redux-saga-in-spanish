@@ -18,18 +18,16 @@ Alternativamente, puede usar las compilaciones UMD proporcionadas directamente e
 
 Supongamos que tenemos una interfaz de usuario para obtener algunos datos de usuario de un servidor remoto cuando se hace clic en un botón. \(Por brevedad, solo mostraremos el código de activación de la acción\).
 
-`class UserComponent extends React.Component {` 
-
-`...` 
-
-`onSomeButtonClicked() {` 
-
-`const { userId, dispatch } = this.props dispatch({type: 'USER_FETCH_REQUESTED', payload: {userId}})` 
-
-`}` 
-
-`...` 
-
+```javascript
+class UserComponent extends React.Component {
+  ...
+  onSomeButtonClicked() {
+    const { userId, dispatch } = this.props
+    dispatch({type: 'USER_FETCH_REQUESTED', payload: {userId}})
+  }
+  ...
+}
+```
 `}`
 
 
