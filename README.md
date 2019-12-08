@@ -28,7 +28,6 @@ class UserComponent extends React.Component {
   ...
 }
 ```
-`}`
 
 
 
