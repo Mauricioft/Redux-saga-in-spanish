@@ -1,3 +1,9 @@
+---
+description: >-
+  Es una biblioteca que tiene como objetivo hacer que los efectos secundarios de
+  las aplicaciones sean más fáciles de administrar.
+---
+
 # Read Me
 
 redux-saga es una biblioteca que tiene como objetivo hacer que los efectos secundarios de la aplicación \(es decir, cosas asincrónicas como la obtención de datos y cosas impuras como acceder al caché del navegador\) sean más fáciles de administrar, más eficientes de ejecutar, fáciles de probar y mejores para manejar fallas.
@@ -18,13 +24,21 @@ Alternativamente, puede usar las compilaciones UMD proporcionadas directamente e
 
 Supongamos que tenemos una interfaz de usuario para obtener algunos datos de usuario de un servidor remoto cuando se hace clic en un botón. \(Por brevedad, solo mostraremos el código de activación de la acción\).
 
-`class UserComponent extends React.component{` 
+`class UserComponent extends React.Component {` 
 
-`...`
+`...` 
 
-onSomeButtonClicked `= () =>` 
+`onSomeButtonClicked() {` 
+
+`const { userId, dispatch } = this.props dispatch({type: 'USER_FETCH_REQUESTED', payload: {userId}})` 
+
+`}` 
+
+`...` 
 
 `}`
+
+
 
 
 
