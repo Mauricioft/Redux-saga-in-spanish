@@ -75,5 +75,26 @@ export default mySaga;
 
 Para ejecutar nuestra Saga, tendremos que conectarla a la Tienda Redux usando el middleware redux-saga.
 
-**\`\`**[**`main.js`**](https://mauricioft93.gitbook.io/redux-saga-en-espanol/#main)**\`\`**
+#### `main.js`
+
+```javascript
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+
+import reducer from './reducers'
+import mySaga from './sagas'
+
+// create the saga middleware
+const sagaMiddleware = createSagaMiddleware()
+// mount it on the Store
+const store = createStore(
+  reducer,
+  applyMiddleware(sagaMiddleware)
+)
+
+// then run the saga
+sagaMiddleware.run(mySaga)
+
+// render the application
+```
 
